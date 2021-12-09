@@ -30,7 +30,9 @@ import { useGlobalContext } from "../components/Context";
 
 function CardDetails() {
   const [singleCard, setSingleCard] = useState({});
-  const [dimensions, setDimensions] = useState({ height: "50%", width: "50%" });
+  const [dimensions, setDimensions] = useState({
+    width: "50%",
+  });
   const [loading, setLoading] = useState(false);
 
   const { modal } = useGlobalContext();
@@ -41,7 +43,7 @@ function CardDetails() {
   const { width } = dimensions;
 
   const handleZoomIn = () => {
-    setDimensions({ width: window.innerWidth - 200 });
+    setDimensions({ width: "100%" });
   };
 
   const handleZoomOut = () => {
@@ -86,15 +88,15 @@ function CardDetails() {
         </div>
       ) : null}
       <div className="cardDetails_imageAndZoom">
-        <SRLWrapper className="cardDetails_imageWrapper">
-          <img
-            style={{ width }}
-            className="cardDetails_image"
-            src={singleCard.download_url}
-            alt={singleCard.author}
-          />
+        <SRLWrapper>
+          <div className="cardDetails_imageWrapper" style={{ width }}>
+            <img
+              className="cardDetails_image"
+              src={singleCard.download_url}
+              alt={singleCard.author}
+            />
+          </div>
         </SRLWrapper>
-
         <div className="cardDetails_zoomIcons">
           <ZoomInIcon className="cardDetails_zoomIn" onClick={handleZoomIn} />
           <ZoomOutIcon
@@ -111,6 +113,7 @@ function CardDetails() {
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
           <FacebookIcon
+            className="cardDetails_singleIcon"
             size={32}
             round={true}
             quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
@@ -120,49 +123,77 @@ function CardDetails() {
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <WhatsappIcon size={32} round={true} />
+          <WhatsappIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </WhatsappShareButton>
         <TwitterShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <TwitterIcon size={32} round={true} />
+          <TwitterIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </TwitterShareButton>
         <EmailShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <EmailIcon size={32} round={true} />
+          <EmailIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </EmailShareButton>
         <LinkedinShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <LinkedinIcon size={32} round={true} />
+          <LinkedinIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </LinkedinShareButton>
         <TumblrShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <TumblrIcon size={32} round={true} />
+          <TumblrIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </TumblrShareButton>
         <ViberShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <ViberIcon size={32} round={true} />
+          <ViberIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </ViberShareButton>
         <RedditShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <RedditIcon size={32} round={true} />
+          <RedditIcon
+            size={32}
+            round={true}
+            className="cardDetails_singleIcon"
+          />
         </RedditShareButton>
         <VKShareButton
           url={singleCard.download_url}
           quote={`Hey, check out this amazing book shared by ${singleCard.author}`}
         >
-          <VKIcon size={32} round={true} />
+          <VKIcon size={32} round={true} className="cardDetails_singleIcon" />
         </VKShareButton>
       </div>
     </div>
