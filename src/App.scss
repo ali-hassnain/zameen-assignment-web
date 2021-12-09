@@ -19,7 +19,7 @@
 }
 .navbar_button {
   margin-right: 40px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: #551a8b;
   padding: 10px;
   border-radius: 10px;
@@ -96,10 +96,12 @@
   align-items: center;
 }
 .cardDetails_image {
-  width: 50%;
+  // width: 50%;
   margin-top: 60px;
   cursor: pointer;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cardDetails_zoomIcons {
   display: flex;
@@ -160,6 +162,7 @@
   width: 50px;
   border: 1px solid #fff;
   border-radius: 25px;
+  cursor: pointer;
 }
 .modal_closeButton:hover {
   color: #fff;

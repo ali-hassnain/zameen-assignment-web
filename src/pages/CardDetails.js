@@ -25,11 +25,15 @@ import {
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ZoomOutIcon from "@mui/icons-material/ZoomOut";
 import { SRLWrapper } from "simple-react-lightbox";
+import Modal from "../components/Modal";
+import { useGlobalContext } from "../components/Context";
 
 function CardDetails() {
   const [singleCard, setSingleCard] = useState({});
   const [dimensions, setDimensions] = useState({ height: "50%", width: "50%" });
   const [loading, setLoading] = useState(false);
+
+  const { modal } = useGlobalContext();
 
   let { id } = useParams();
   console.log("params:", id);
@@ -76,17 +80,20 @@ function CardDetails() {
 
   return (
     <div className="cardDetails_box">
-      <div className="cardDetails_imageAndZoom">
-        <div className="cardDetails_imageWrapper">
-          <SRLWrapper>
-            <img
-              style={{ width }}
-              className="cardDetails_image"
-              src={singleCard.download_url}
-              alt={singleCard.author}
-            />
-          </SRLWrapper>
+      {modal ? (
+        <div>
+          <Modal />
         </div>
+      ) : null}
+      <div className="cardDetails_imageAndZoom">
+        <SRLWrapper className="cardDetails_imageWrapper">
+          <img
+            style={{ width }}
+            className="cardDetails_image"
+            src={singleCard.download_url}
+            alt={singleCard.author}
+          />
+        </SRLWrapper>
 
         <div className="cardDetails_zoomIcons">
           <ZoomInIcon className="cardDetails_zoomIn" onClick={handleZoomIn} />

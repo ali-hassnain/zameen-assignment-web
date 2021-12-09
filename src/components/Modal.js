@@ -8,12 +8,10 @@ const Modal = ({ show }) => {
 
   useEffect(() => {
     let id = Math.floor(Math.random() * 1000);
-    console.log("id:", id);
     async function getAuthorById() {
       try {
         const response = await fetch(`https://picsum.photos/id/${id}/info`);
         const data = await response.json();
-        console.log("data:", data);
         if (data) {
           const { author, download_url } = data;
           const newData = { id, author, download_url };

@@ -17,19 +17,16 @@ function HomePage() {
   const fetchData = async () => {
     setPage((prev) => prev + 1);
     try {
+      setLoading(true);
       const response = await fetch(
         `https://picsum.photos/v2/list?page=${page}&limit=15`
       );
       const data = await response.json();
-
-      console.log("page:", page);
       if (page > 1) {
         setData((prevData) => [...prevData, ...data]);
       } else {
         setData(data);
-        console.log("data:", data);
       }
-
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -48,9 +45,7 @@ function HomePage() {
         <div>
           <Modal />
         </div>
-      ) : null
-      // <h1>Hello</h1>
-      }
+      ) : null}
       <InfiniteScroll
         dataLength={data.length}
         next={fetchData}
@@ -62,8 +57,8 @@ function HomePage() {
         }
       >
         <div style={{ marginTop: 80 }}>
-          {data.map((card, index) => (
-            <div onClick={() => history.push(`/${card.id}`)}>
+          {data.map((card) => (
+            <div key={card.id} onClick={() => history.push(`/${card.id}`)}>
               <Card id={card.id} img={card.download_url} name={card.author} />
             </div>
           ))}
