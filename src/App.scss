@@ -1,0 +1,147 @@
+.navbar {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  height: 60px;
+  box-shadow: 0px 2px 4px RGB(0 0 0/18%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background: rgb(65, 42, 157);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(65, 42, 157, 1) 0%,
+  //   rgba(160, 33, 141, 1) 50%,
+  //   rgba(208, 35, 119, 1) 100%
+  // );
+}
+.navbar_title {
+  margin-left: 40px;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "century gothic";
+  color: #551a8b;
+}
+.navbar_button {
+  margin-right: 40px;
+  font-size: 24px;
+  border: none;
+  // border: 1px solid #a0218d;
+  background-color: #551a8b;
+  // background: rgb(65, 42, 157);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(65, 42, 157, 1) 0%,
+  //   rgba(160, 33, 141, 1) 50%,
+  //   rgba(208, 35, 119, 1) 100%
+  // );
+  // background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+@media only screen and (max-width: 760px) {
+  .navbar_title {
+    font-size: 18px;
+  }
+  .navbar_button {
+    padding: 5px;
+    font-size: 18px;
+  }
+}
+
+.loader {
+  flex: 1 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  background-color: #f0f0f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.card:hover {
+  opacity: 0.8;
+}
+.card_image {
+  width: 165px;
+  height: 165px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.card_details {
+  align-items: center;
+  display: flex;
+  margin-left: 20px;
+}
+.card_detailsTile {
+  font-size: 18psx;
+  font-family: "century gothic";
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+.cardDetails_box {
+  height: auto;
+  background-color: #e6ecf6;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+}
+.cardDetails_imageAndZoom {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.cardDetails_image {
+  margin-top: 60px;
+
+  border-radius: 5px;
+}
+.cardDetails_zoomIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 20px;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  top: 30px;
+}
+
+.cardDetails_zoomIn:hover {
+  color: white;
+}
+
+.cardDetails_zoomOut:hover {
+  color: white;
+}
+.cardDetails_title {
+  font-family: "century gothic";
+}
+.cardDetails_shareIcons {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
