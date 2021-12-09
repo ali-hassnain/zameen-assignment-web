@@ -1,7 +1,8 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import { useGlobalContext } from "./Context";
 
 function Header() {
+  const { modal, setModal } = useGlobalContext();
   return (
     <>
       <head>
@@ -13,7 +14,9 @@ function Header() {
         <a href="/" className="navbar_title">
           zameen.com interview project
         </a>
-        <button className="navbar_button">surprise</button>
+        <button className="navbar_button" onClick={() => setModal(true)}>
+          surprise
+        </button>
       </nav>
     </>
   );

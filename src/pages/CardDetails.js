@@ -5,9 +5,7 @@ import { CircularProgress } from "@mui/material";
 import {
   EmailIcon,
   FacebookIcon,
-  FacebookMessengerIcon,
   LinkedinIcon,
-  PinterestIcon,
   RedditIcon,
   TumblrIcon,
   TwitterIcon,
@@ -17,7 +15,6 @@ import {
   EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
-  PinterestShareButton,
   RedditShareButton,
   TumblrShareButton,
   TwitterShareButton,
@@ -27,17 +24,17 @@ import {
 } from "react-share";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ZoomOutIcon from "@mui/icons-material/ZoomOut";
+import { SRLWrapper } from "simple-react-lightbox";
 
 function CardDetails() {
   const [singleCard, setSingleCard] = useState({});
   const [dimensions, setDimensions] = useState({ height: "50%", width: "50%" });
-  const [background, setbackground] = useState({ backgroundColor: "none" });
   const [loading, setLoading] = useState(false);
+
   let { id } = useParams();
   console.log("params:", id);
 
   const { width } = dimensions;
-  const { bg } = background;
 
   const handleZoomIn = () => {
     setDimensions({ width: window.innerWidth - 200 });
@@ -78,14 +75,18 @@ function CardDetails() {
   }
 
   return (
-    <div className="cardDetails_box" style={{ bg }}>
+    <div className="cardDetails_box">
       <div className="cardDetails_imageAndZoom">
-        <img
-          style={{ width }}
-          className="cardDetails_image"
-          src={singleCard.download_url}
-          alt={singleCard.author}
-        />
+        <div className="cardDetails_imageWrapper">
+          <SRLWrapper>
+            <img
+              style={{ width }}
+              className="cardDetails_image"
+              src={singleCard.download_url}
+              alt={singleCard.author}
+            />
+          </SRLWrapper>
+        </div>
 
         <div className="cardDetails_zoomIcons">
           <ZoomInIcon className="cardDetails_zoomIn" onClick={handleZoomIn} />

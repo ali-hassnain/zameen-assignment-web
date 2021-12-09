@@ -3,8 +3,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "../components/Card";
 import { useHistory } from "react-router";
 import { CircularProgress } from "@mui/material";
+import Modal from "../components/Modal";
+import { useGlobalContext } from "../components/Context";
 
 function HomePage() {
+  const { modal, setModal } = useGlobalContext();
   const [data, setData] = useState([]);
   const [error, setError] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,6 +44,13 @@ function HomePage() {
 
   return (
     <div>
+      {modal ? (
+        <div>
+          <Modal />
+        </div>
+      ) : null
+      // <h1>Hello</h1>
+      }
       <InfiniteScroll
         dataLength={data.length}
         next={fetchData}

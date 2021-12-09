@@ -8,13 +8,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background: rgb(65, 42, 157);
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(65, 42, 157, 1) 0%,
-  //   rgba(160, 33, 141, 1) 50%,
-  //   rgba(208, 35, 119, 1) 100%
-  // );
 }
 .navbar_title {
   margin-left: 40px;
@@ -26,33 +19,13 @@
 }
 .navbar_button {
   margin-right: 40px;
-  font-size: 24px;
-  border: none;
-  // border: 1px solid #a0218d;
+  font-size: 2rem;
   background-color: #551a8b;
-  // background: rgb(65, 42, 157);
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(65, 42, 157, 1) 0%,
-  //   rgba(160, 33, 141, 1) 50%,
-  //   rgba(208, 35, 119, 1) 100%
-  // );
-  // background-color: transparent;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
   color: #fff;
 }
-@media only screen and (max-width: 760px) {
-  .navbar_title {
-    font-size: 18px;
-  }
-  .navbar_button {
-    padding: 5px;
-    font-size: 18px;
-  }
-}
-
 .loader {
   flex: 1 1;
   display: flex;
@@ -87,12 +60,14 @@
   margin-left: 20px;
 }
 .card_detailsTile {
-  font-size: 18psx;
+  font-size: 1.5rem;
   font-family: "century gothic";
   text-align: center;
   align-items: center;
   justify-content: center;
   color: #000;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .cardDetails_box {
   height: auto;
@@ -106,7 +81,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
 }
 .cardDetails_imageAndZoom {
   display: flex;
@@ -114,9 +88,17 @@
   flex-direction: row;
   align-items: center;
 }
+.cardDetails_imageWrapper {
+  //
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 .cardDetails_image {
+  width: 50%;
   margin-top: 60px;
-
+  cursor: pointer;
   border-radius: 5px;
 }
 .cardDetails_zoomIcons {
@@ -133,10 +115,12 @@
 
 .cardDetails_zoomIn:hover {
   color: white;
+  cursor: pointer;
 }
 
 .cardDetails_zoomOut:hover {
   color: white;
+  cursor: pointer;
 }
 .cardDetails_title {
   font-family: "century gothic";
@@ -144,4 +128,98 @@
 .cardDetails_shareIcons {
   cursor: pointer;
   margin-bottom: 10px;
+}
+.footer {
+  height: 80px;
+  padding-top: 50px;
+}
+.footer_text {
+  text-align: center;
+  color: gray;
+}
+
+.modal_section {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: white;
+  width: 40%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: #000;
+}
+.modal_closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+}
+.modal_closeButton:hover {
+  color: #fff;
+}
+.modal_image {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+.modal_text {
+  text-align: center;
+  color: #fff;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 980px) {
+  .modal_main {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .modal_section {
+    width: 70%;
+  }
+  .navbar_title {
+    font-size: 1.5rem;
+  }
+  .navbar_button {
+    padding: 5px;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 410px) and (max-width: 560px) {
+  .navbar_title {
+    font-size: 1rem;
+  }
+  .navbar_button {
+    font-size: 1rem;
+  }
+  .card_detailsTile {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 409px) {
+  .navbar_title {
+    font-size: 0.7rem;
+  }
+  .navbar_button {
+    display: none;
+  }
+  .card_detailsTile {
+    display: none;
+  }
+  .card_details {
+    display: none;
+  }
+  .card {
+    background-color: #fff;
+    justify-content: center;
+  }
 }

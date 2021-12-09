@@ -3,10 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import SimpleReactLightbox from "simple-react-lightbox";
+import { AppProvider } from "./components/Context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppProvider>
+      <SimpleReactLightbox>
+        <App />
+      </SimpleReactLightbox>
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
