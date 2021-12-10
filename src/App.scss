@@ -94,7 +94,8 @@
 }
 .cardDetails_image {
   width: 100%;
-
+  position: relative;
+  left: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
@@ -140,6 +141,7 @@
 .footer_text {
   text-align: center;
   color: gray;
+  font-size: 14px;
 }
 
 .modal_section {

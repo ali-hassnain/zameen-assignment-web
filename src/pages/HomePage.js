@@ -7,17 +7,14 @@ import Modal from "../components/Modal";
 import { useGlobalContext } from "../components/Context";
 
 function HomePage() {
-  const { modal, setModal } = useGlobalContext();
+  const { modal } = useGlobalContext();
   const [data, setData] = useState([]);
-  const [error, setError] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const history = useHistory();
 
   const fetchData = async () => {
     setPage((prev) => prev + 1);
     try {
-      setLoading(true);
       const response = await fetch(
         `https://picsum.photos/v2/list?page=${page}&limit=15`
       );
@@ -27,11 +24,8 @@ function HomePage() {
       } else {
         setData(data);
       }
-      setLoading(false);
     } catch (error) {
-      setError(error);
-      console.log("error", error);
-      setLoading(false);
+      console.log("error:", error);
     }
   };
 

@@ -38,7 +38,6 @@ function CardDetails() {
   const { modal } = useGlobalContext();
 
   let { id } = useParams();
-  console.log("params:", id);
 
   const { width } = dimensions;
 
@@ -56,7 +55,6 @@ function CardDetails() {
       try {
         const response = await fetch(`https://picsum.photos/id/${id}/info`);
         const singleCard = await response.json();
-        console.log("data:", singleCard);
         if (singleCard) {
           const { author, download_url } = singleCard;
           const newSingleCard = { id, author, download_url };
